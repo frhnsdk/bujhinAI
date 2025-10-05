@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bujhinAI</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>bujhinAI</h1>
-        <textarea id="text-input" placeholder="Enter a definition or text..."></textarea>
-        <button id="generate-btn">Generate Analogy</button>
-        <div id="result"></div>
+    <div class="main-container">
+        <div class="panel input-panel">
+            <h1>bujhinAI</h1>
+            <textarea id="text-input" placeholder="Enter a definition or text..."></textarea>
+            <button id="generate-btn">Generate Analogy</button>
+        </div>
+        <div class="panel output-panel">
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+            </div>
+            <div id="result"></div>
+        </div>
     </div>
     <script src="/static/script.js"></script>
 </body>
