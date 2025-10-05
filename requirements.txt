@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+python-multipart
+jinja2
+llama-cpp-python
+torch
+typing-extensions
+gpt4all
+gpt4all[cuda]
