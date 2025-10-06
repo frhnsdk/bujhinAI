@@ -76,6 +76,10 @@ button:hover {
     box-shadow: 0 6px 20px 0 rgba(248, 87, 166, 0.85);
 }
 
+#download-pdf-btn {
+    margin-top: 1.5rem;
+}
+
 .output-panel {
     display: flex;
     justify-content: center;
