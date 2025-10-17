@@ -22,47 +22,30 @@ cd bujhinAI
 
 **Note:** This repository contains the language model file, which is several gigabytes in size. If you have `git-lfs` installed, it will be downloaded automatically. If not, you may need to install `git-lfs` and run `git lfs pull` to download the model file.
 
-### 2. Create a Virtual Environment
+### 2. Create and activate a virtual environment (Windows example)
 
-It is recommended to use a virtual environment to manage the project's dependencies.
+It's recommended to use a virtual environment. On Windows (PowerShell) you can run:
 
-```bash
-python -m venv venv
-```
-
-### 3. Activate the Virtual Environment
-
-**On Windows:**
-
-```bash
-.\venv\Scripts\activate
-```
-
-**On macOS and Linux:**
-
-```bash
-source venv/bin/activate
-```
-
-### 4. Install Dependencies
-
-Install the required Python packages using `pip`.
-
-```bash
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
+
+If you're on macOS or Linux, use the equivalent `python -m venv .venv` and `source .venv/bin/activate` commands, then install requirements.
 
 
 
 ## Running the Application
 
-Once you have completed the setup, you can run the application using `uvicorn`.
+After setup, run the FastAPI app with `uvicorn`. Example (PowerShell):
 
-```bash
-uvicorn main:app --reload
+```powershell
+# from project root
+uvicorn main:app --port 8000
 ```
 
-The application will be available at `http://127.0.0.1:8000`.
+Open your browser at `http://127.0.0.1:8000`.
 
 ## Usage
 
@@ -70,3 +53,13 @@ The application will be available at `http://127.0.0.1:8000`.
 2.  Enter a concept in the text box.
 3.  Click the "Get Analogy" button.
 4.  The generated analogy will be displayed below the text box.
+
+## Download PDF with caption
+
+The web UI includes a "Download as PDF" button. When you click it the UI will prompt you to enter a caption. The resulting PDF includes these sections in this order:
+
+1. Caption — the caption you entered in the prompt (also used to build the filename)
+2. Definition — the input text you provided in the left textarea
+3. Generated response — the analogy produced by the model
+
+The filename is sanitized and appended with a timestamp. If you'd prefer a modal instead of the browser prompt, I can add a Bootstrap modal to the template and wire it to the same behavior.
